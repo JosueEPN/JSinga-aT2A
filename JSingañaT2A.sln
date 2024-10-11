@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSingañaT2A", "JSingañaT2A\JSingañaT2A.csproj", "{B6C71BED-8E8D-44EE-83C8-547204A508EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C71BED-8E8D-44EE-83C8-547204A508EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D834C9B-AD5D-44FB-A1EB-BF9B118C03FF}
+	EndGlobalSection
+EndGlobal
