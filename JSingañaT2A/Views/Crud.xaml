@@ -3,76 +3,100 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JSingañaT2A.Views.Crud"
              Title="Crud">
-    <VerticalStackLayout Padding="20"
-                         Spacing="20"
-                         Background="Black">
-        <StackLayout >
-            <Label Text="CALCULADORA DE NOTAS"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center"
-                   BackgroundColor="Blue"
-                   Padding="20"/>
-                    
-            <Label Text="Nombre del Estudiante" 
-                   Margin="0,10"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
-            <Picker x:Name="StudentPicker"
-                    TextColor="White">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Estudiante 1</x:String>
-                        <x:String>Estudiante 2</x:String>
-                        <x:String>Estudiante 3</x:String>
-                        <x:String>Estudiante 4</x:String>
-                        <x:String>Estudiante 5</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-            
-            <!-- Notas de seguimiento y examen -->
-            <Label Text="Parcial 1" 
-                   FontSize="15"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
-            <Entry x:Name="Seguimiento1" 
-                   Placeholder="Nota Seguimiento 1 (0-10)" 
-                   Keyboard="Numeric"
-                   Margin="0,0,0,20"
-                   TextColor="White"/>
-            <Entry x:Name="Examen1" 
-                   Placeholder="Examen 1 (0-10)" 
-                   Keyboard="Numeric"
-                   Margin="0,0,0,20"
-                   TextColor="White"/>
-            <Label Text="Parcial 2" 
-                   FontSize="15"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
-            <Entry x:Name="Seguimiento2" 
-                   Placeholder="Nota Seguimiento 2 (0-10)" 
-                   Keyboard="Numeric"
-                   Margin="0,0,0,20"
-                   TextColor="White"/>
-            <Entry x:Name="Examen2" 
-                   Placeholder="Examen 2 (0-10)" 
-                   Keyboard="Numeric"
-                   Margin="0,0,0,20"
-                   TextColor="White"/>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <StackLayout>
+                <Label Text="CALCULADORA DE NOTAS"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       BackgroundColor="Blue"
+                       Padding="20"
+                       TextColor="White"
+                       />
 
-            <!-- DatePicker para la fecha -->
-            <Label Text="Fecha"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
-            <DatePicker x:Name="FechaPicker"
-                        Margin="0,0,0,20"
-                        TextColor="White"/>
+                <Label Text="Nombre del Estudiante"
+                       Margin="0,10"
+                       FontAttributes="Bold"/>
+                <Picker x:Name="StudentPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Juan Pérez</x:String>
+                            <x:String>María López</x:String>
+                            <x:String>Andrés García</x:String>
+                            <x:String>Carmen Díaz</x:String>
+                            <x:String>Ricardo Sánchez</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
 
-            <!-- Botón para calcular -->
-            <Button x:Name="btn_calcularNotas"
-                    Text="Calcular"
-                    Clicked="btn_calcularNotas_Clicked" />
-        </StackLayout>
-    </VerticalStackLayout>
+                <Label Text="Parcial 1" FontSize="15" FontAttributes="Bold" Padding="0,0,0,20"/>
+                <Grid Padding="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Seguimiento 1" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="Seguimiento1"
+                           Placeholder="Nota Seguimiento 1 (0-10)"
+                           Keyboard="Numeric"
+                           Grid.Column="1" Grid.Row="0" />
+
+                    <Label Text="Examen 1" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="Examen1"
+                           Placeholder="Examen 1 (0-10)"
+                           Keyboard="Numeric"
+                           Grid.Column="1" Grid.Row="1" />
+
+                    <Label Text="Nota Parcial 1" Grid.Column="0" Grid.Row="2"/>
+                    <Label x:Name="NotaParcial1"
+                           Text="0.0"
+                           Grid.Column="1" Grid.Row="2" Padding="0,0,0,20"/>
+                </Grid>
+
+                <Label Text="Parcial 2" FontSize="15" FontAttributes="Bold" Padding="0,0,0,20"/>
+                <Grid Padding="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Seguimiento 2" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="Seguimiento2"
+                           Placeholder="Nota Seguimiento 2 (0-10)"
+                           Keyboard="Numeric"
+                           Grid.Column="1" Grid.Row="0" />
+
+                    <Label Text="Examen 2" Grid.Column="0" Grid.Row="1"/>
+                    <Entry x:Name="Examen2"
+                           Placeholder="Examen 2 (0-10)"
+                           Keyboard="Numeric"
+                           Grid.Column="1" Grid.Row="1" />
+
+                    <Label Text="Nota Parcial 2" Grid.Column="0" Grid.Row="2"/>
+                    <Label x:Name="NotaParcial2"
+                           Text="0.0"
+                           Grid.Column="1" Grid.Row="2" Padding="0,0,0,20"/>
+                </Grid>
+
+                <Label Text="Fecha" FontAttributes="Bold" Padding="0,0,0,20"/>
+                <DatePicker x:Name="FechaPicker" />
+
+                <Button x:Name="btn_calcularNotas"
+                        Text="Calcular"
+                        Padding="0,0,0,20"
+                        Clicked="btn_calcularNotas_Clicked" />
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

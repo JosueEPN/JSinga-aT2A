@@ -10,6 +10,13 @@ public partial class Crud : ContentPage
     private void btn_calcularNotas_Clicked(object sender, EventArgs e)
     {
 
+        // Verificar si se ha seleccionado un estudiante
+        if (StudentPicker.SelectedIndex == -1)
+        {
+            DisplayAlert("Error", "Por favor, selecciona un estudiante antes de continuar.", "OK");
+            return; 
+        }
+
         // Validar las entradas
         if (!double.TryParse(Seguimiento1.Text, out double notaSeg1) || notaSeg1 < 0 || notaSeg1 > 10 ||
             !double.TryParse(Examen1.Text, out double notaEx1) || notaEx1 < 0 || notaEx1 > 10 ||
@@ -24,6 +31,12 @@ public partial class Crud : ContentPage
         double parcial1 = (notaSeg1 * 0.3) + (notaEx1 * 0.2);
         double parcial2 = (notaSeg2 * 0.3) + (notaEx2 * 0.2);
         double notaFinal = parcial1 + parcial2;
+
+
+        // Mostrar las notas parciales en los Labels
+        NotaParcial1.Text = parcial1.ToString("F2");
+        NotaParcial2.Text = parcial2.ToString("F2");
+
 
         // Determinar el estado final
         string estado;
