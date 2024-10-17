@@ -2,20 +2,21 @@ namespace JSingañaT2A.Views;
 
 public partial class Crud : ContentPage
 {
-	public Crud()
+    string user;
+
+    public Crud() 
+    {
+        InitializeComponent();
+    }
+	public Crud(string usuario)
 	{
 		InitializeComponent();
+        user = usuario;
+        txtUsuario.Text = user;
 	}
 
     private void btn_calcularNotas_Clicked(object sender, EventArgs e)
     {
-
-        // Verificar si se ha seleccionado un estudiante
-        if (StudentPicker.SelectedIndex == -1)
-        {
-            DisplayAlert("Error", "Por favor, selecciona un estudiante antes de continuar.", "OK");
-            return; 
-        }
 
         // Validar las entradas
         if (!double.TryParse(Seguimiento1.Text, out double notaSeg1) || notaSeg1 < 0 || notaSeg1 > 10 ||
@@ -49,7 +50,7 @@ public partial class Crud : ContentPage
 
         // Mostrar los resultados en un DisplayAlert
         DisplayAlert("Resultado",
-                     $"Nombre: {StudentPicker.SelectedItem}\n" +
+                     $"Nombre: {user}\n" +
                      $"Fecha: {FechaPicker.Date.ToString("d")}\n" +
                      $"Nota Parcial 1: {parcial1:F2}\n" +
                      $"Nota Parcial 2: {parcial2:F2}\n" +
