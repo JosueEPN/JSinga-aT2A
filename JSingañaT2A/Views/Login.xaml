@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JSingañaT2A.Views.Login"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
         <Label 
              Text="Inicio de sesion"
              VerticalOptions="Center" 
